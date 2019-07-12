@@ -1,0 +1,33 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: build-nightly-%TARGET%
+spec:
+  schedule: "0 5 * * *"
+  concurrencyPolicy: "Replace"
+  startingDeadlineSeconds: 200
+  suspend: false
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            parent: "cronjobpi"
+        spec:
+          containers:
+          - name: nightly-%TARGET%
+            image: %IMAGE_NAME%
+            args:
+                - openshift-pipeline/%TARGET%
+                - https://github.com/tektoncd/catalog/archive/master.tar.gz
+                - nightly
+                - /catalog-master/%TARGET%/Dockerfile
+            env:
+              - name: APP_ROBOT_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: approbottoken
+                    key: token
+          restartPolicy: OnFailure
