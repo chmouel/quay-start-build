@@ -4,9 +4,9 @@ This was designed for openshfit catalog to trigger a new build every night from 
 
 It uses quay API and kubernetes cron to periodically kick the job on quay.
 
-## Build this image 
+## Build this image
 
-You need to access to the quay repo `openshift-pipeline/` or adjust the variable in Makefile and then run : 
+You need to access to the quay repo `openshift-pipeline/` or adjust the variable in Makefile and then run :
 
 `make`
 
@@ -22,3 +22,6 @@ make install
 
 adjust the template if you need to do some customization, this is mostly tailored to generate the image for the tekton catalog.
 
+## Demo
+
+![Screenshot demo](./screenshot.png)
