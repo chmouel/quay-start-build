@@ -25,3 +25,20 @@ adjust the template if you need to do some customization, this is mostly tailore
 ## Demo
 
 ![Screenshot demo](./screenshot.png)
+
+## Debug
+
+You can run the container script verbosly (set -x in shell) with this :
+
+```
+oc set env cronjob/<cronjob> SCRIPT_DEBUG=true
+```
+
+To run a cronjob manually you can use this nifty trick :
+
+```
+kubectl create job --from=cronjob/<name of cronjob> <name of job>
+```
+
+(you may have to use `oc` command on openshift)
+
