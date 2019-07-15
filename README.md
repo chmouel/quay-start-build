@@ -1,4 +1,6 @@
-Launch quay repository trigger
+Start a build in quay
+=====================
+
 
 This was designed for openshfit catalog to trigger a new build every night from the latest but this can be slurped for some other projects.
 
