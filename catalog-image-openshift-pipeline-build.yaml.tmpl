@@ -23,7 +23,7 @@ spec:
                 - openshift-pipeline/%TARGET%
                 - https://github.com/tektoncd/catalog/archive/master.tar.gz
                 - nightly
-                - /catalog-master/%TARGET%/Dockerfile
+                - /catalog-master/%REPO_LOCATION%/Dockerfile
             env:
               - name: APP_ROBOT_TOKEN
                 valueFrom:
