@@ -3,7 +3,7 @@
 set -e
 
 function help() {
-	echo "Missing arguments"
+    echo "Missing arguments"
     echo "quaybuild repo archive_url tag dockerfile_path subdirectory"
     exit
 }
