@@ -44,3 +44,10 @@ kubectl create job --from=cronjob/<name of cronjob> <name of job>
 
 (you may have to use `oc` command on openshift)
 
+If nothing happened during the night then go over your build history for example : 
+
+https://quay.io/repository/openshift-pipeline/openshift-cli?tab=builds
+
+click on red cross to see what was the build error,
+
+
